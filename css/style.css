@@ -1,0 +1,69 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    background: linear-gradient(to left, #c0eaf1, #23abe0);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main{
+    height: 400px;
+    width: 60%;
+}
+.main{
+    height: 380px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.conteudo {
+    width: 90%;
+    height: 350px;
+    position: relative;
+    margin: 10px;
+    z-index: 1;
+}
+
+/* Borda animada */
+.box {
+    position: relative;
+    height: 380px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 0; 
+}
+.box::before{
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 300%;
+    background: linear-gradient(180deg, #050035, #0077ff);
+    animation: animate 5s linear infinite;
+}
+.box::after{
+    content: "";
+    position: absolute;
+    background-color: #379ddd;
+    inset: 5px;
+    border-radius: inherit;
+}
+@keyframes animate {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
